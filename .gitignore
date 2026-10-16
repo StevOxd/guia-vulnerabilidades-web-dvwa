@@ -1,0 +1,43 @@
+# ============================================================
+#  Material del curso (derechos de autor de CyberCenter) — NO subir
+# ============================================================
+/Módulo 3*.pdf
+/Plantilla*.docx
+
+# ============================================================
+#  Entregables (trabajo calificable + datos personales) — NO subir
+# ============================================================
+/entregables/
+
+# ============================================================
+#  Laboratorio: repositorios de terceros (DVWA, WebGoat)
+#  Se clonan aparte; no se redistribuyen aquí.
+# ============================================================
+/lab/
+
+# ============================================================
+#  Sistema operativo y temporales de Office
+# ============================================================
+.DS_Store
+~$*
+*.tmp
+Thumbs.db
+
+# ============================================================
+#  Scripts de generación (rutas locales + referencia al membrete
+#  del curso). Se conservan en local; no se publican.
+# ============================================================
+/scripts/
+
+# ============================================================
+#  Notas de proceso (meta) — no se publican
+# ============================================================
+/guia-aprendizaje/16-informe-tecnico.md
+/guia-aprendizaje/17-resumen-ejecutivo.md
+
+# ============================================================
+#  Python / entornos virtuales
+# ============================================================
+venv/
+__pycache__/
+*.pyc

